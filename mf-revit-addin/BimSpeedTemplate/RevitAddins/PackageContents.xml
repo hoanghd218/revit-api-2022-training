@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApplicationPackage SchemaVersion="1.0" AppVersion="1.0.0" ProductCode="A688A183-9145-48CC-B0FE-0438B96C5099">
+  <Components>
+    <RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="R2017" SeriesMax="R2017" />
+    <ComponentEntry AppName="BIM Speed Tools" Version="1.0.0" ModuleName="./Contents/2017/_RevitAddin.addin" />
+  </Components>
+  <Components>
+    <RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="R2018" SeriesMax="R2018" />
+    <ComponentEntry AppName="BIM Speed Tools" Version="1.0.0" ModuleName="./Contents/2018/_RevitAddin.addin" />
+  </Components>
+  <Components>
+    <RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="R2019" SeriesMax="R2019" />
+    <ComponentEntry AppName="BIM Speed Tools" Version="1.0.0" ModuleName="./Contents/2019/_RevitAddin.addin" />
+  </Components>
+  <Components>
+    <RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="R2020" SeriesMax="R2020" />
+    <ComponentEntry AppName="BIM Speed Tools" Version="1.0.0" ModuleName="./Contents/2020/_RevitAddin.addin" />
+  </Components>
+  <Components>
+    <RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="R2021" SeriesMax="R2021" />
+    <ComponentEntry AppName="BIM Speed Tools" Version="1.0.0" ModuleName="./Contents/2021/_RevitAddin.addin" />
+  </Components>
+  <Components>
+    <RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="R2022" SeriesMax="R2022" />
+    <ComponentEntry AppName="BIM Speed Tools" Version="1.0.0" ModuleName="./Contents/2022/_RevitAddin.addin" />
+  </Components>
+</ApplicationPackage>

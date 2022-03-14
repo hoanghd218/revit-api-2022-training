@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C425FB30-E9D1-46B6-B87A-B9214AAD4714}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>RevitAddins</RootNamespace>
+    <AssemblyName>RevitAddins</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release_2020|AnyCPU' ">
+    <OutputPath>..\Addin\Output\2020\MF_Tools\</OutputPath>
+    <DefineConstants>TRACE;Version2020</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>latest</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release_2021|AnyCPU' ">
+    <OutputPath>..\Addin\Output\2021\MF_Tools\</OutputPath>
+    <DefineConstants>TRACE;Version2021</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>latest</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug_2020|AnyCPU'">
+    <OutputPath>..\Addin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG;Version2020</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>latest</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug_2021|AnyCPU'">
+    <OutputPath>..\Addin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG;Version2021</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>latest</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug_2022|AnyCPU'">
+    <OutputPath>..\Addin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG;Version2022</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>latest</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release_2022|AnyCPU'">
+    <OutputPath>..\Addin\Output\2022\MF_Tools\</OutputPath>
+    <DefineConstants>TRACE;Version2022</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>latest</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MoreLinq, Version=3.3.2.0, Culture=neutral, PublicKeyToken=384d532d7e88985d, processorArchitecture=MSIL">
+      <HintPath>..\packages\morelinq.3.3.2\lib\net451\MoreLinq.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RevitAPI, Version=19.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\$(Configuration)\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIIFC, Version=20.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\$(Configuration)\RevitAPIIFC.dll</HintPath>
+    </Reference>
+    <Reference Include="RevitAPIUI, Version=19.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\$(Configuration)\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Define.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\RebarOpening.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>RebarOpening.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="AppTest.cs" />
+    <Compile Include="TestCmd.cs" />
+    <Compile Include="Utils\ComparerUtils\ElementIdComparer.cs" />
+    <Compile Include="Utils\ComparerUtils\RebarComparer.cs" />
+    <Compile Include="Utils\ComparerUtils\TransformComparer.cs" />
+    <Compile Include="Utils\Comparer\XYZComparer.cs" />
+    <Compile Include="Utils\Constants.cs" />
+    <Compile Include="Utils\Decrypt\Decrypt.cs" />
+    <Compile Include="Utils\DirectoryUtils.cs" />
+    <Compile Include="Utils\DocumentUtils\ActiveModelUtil.cs" />
+    <Compile Include="Utils\DocumentUtils\DocumentUtils.cs" />
+    <Compile Include="Utils\DocumentUtils\ExternalEventHandler.cs" />
+    <Compile Include="Utils\DocUtils.cs" />
+    <Compile Include="Utils\DoubleUtils.cs" />
+    <Compile Include="Utils\ElementDataExtension.cs" />
+    <Compile Include="Utils\ElementUtils\ElementUtils.cs" />
+    <Compile Include="Utils\GeometryUtils\CurveUtils.cs" />
+    <Compile Include="Utils\GeometryUtils\FaceUtils.cs" />
+    <Compile Include="Utils\GeometryUtils\Geometry\BoundingBoxXYZUtils.cs" />
+    <Compile Include="Utils\GeometryUtils\Geometry\SolidData.cs" />
+    <Compile Include="Utils\GeometryUtils\PlaneUtils.cs" />
+    <Compile Include="Utils\GeometryUtils\RevitGeometryUtils.cs" />
+    <Compile Include="Utils\GeometryUtils\SolidHelper.cs" />
+    <Compile Include="Utils\GeometryUtils\SolidUtil.cs" />
+    <Compile Include="Utils\GeometryUtils\XYZUtils.cs" />
+    <Compile Include="Utils\MessageBoxUtils\MessageUtils.cs" />
+    <Compile Include="Utils\ObjectUtils.cs" />
+    <Compile Include="Utils\ParameterUtilities.cs" />
+    <Compile Include="Utils\RebarUtils\GroupRebarUtils.cs" />
+    <Compile Include="Utils\RebarUtils\RebarUtils.cs" />
+    <Compile Include="Utils\SelectionChangedWatcher.cs" />
+    <Compile Include="Utils\SelectionFilter\BeamSelectionFilter.cs" />
+    <Compile Include="Utils\SelectionFilter\CategorySelectionFilter.cs" />
+    <Compile Include="Utils\SelectionFilter\CeilingSelectionFilter.cs" />
+    <Compile Include="Utils\SelectionFilter\ElementContainRebarSelectionFilter.cs" />
+    <Compile Include="Utils\SelectionFilter\ElementSelector.cs" />
+    <Compile Include="Utils\SelectionFilter\FoudationSelectionFilter.cs" />
+    <Compile Include="Utils\SelectionFilter\GridSelectionFilter.cs" />
+    <Compile Include="Utils\SelectionFilter\RebarSelectionFilter.cs" />
+    <Compile Include="Utils\SelectionFilter\RoomAndAreaSelectionFilter.cs" />
+    <Compile Include="Utils\SelectionFilter\ScopeBoxSelectionFilter.cs" />
+    <Compile Include="Utils\SelectionFilter\TextNoteSelectionFilter.cs" />
+    <Compile Include="Utils\SelectionFilter\ViewportSelectionFilter.cs" />
+    <Compile Include="Utils\SelectionFilter\WallAndSlabSelectionFilter.cs" />
+    <Compile Include="Utils\ShowWindowUtils.cs" />
+    <Compile Include="Utils\StringUtils.cs" />
+    <Compile Include="Utils\UnitConverter.cs" />
+    <Compile Include="Utils\ViewUtils\ViewExtensions.cs" />
+    <Compile Include="Utils\ViewUtils\ViewUtils.cs" />
+    <Compile Include="Utils\Win32Utils.cs" />
+    <Compile Include="Utils\WPFUtils\Behaviors\DataGridBehavior.cs" />
+    <Compile Include="Utils\WPFUtils\Behaviors\NumberOnlyBehavior.cs" />
+    <Compile Include="Utils\WPFUtils\Converters\BoolRadioConverter.cs" />
+    <Compile Include="Utils\WPFUtils\Converters\BoolToCollapsedConverter.cs" />
+    <Compile Include="Utils\WPFUtils\Converters\BoolToGridRowHeightConverter.cs" />
+    <Compile Include="Utils\WPFUtils\Converters\ComparisonConverter.cs" />
+    <Compile Include="Utils\WPFUtils\Converters\ConverterBoolReverse.cs" />
+    <Compile Include="Utils\WPFUtils\Converters\ConverterBoolToVisibility.cs" />
+    <Compile Include="Utils\WPFUtils\Converters\ConverterComparison.cs" />
+    <Compile Include="Utils\WPFUtils\Converters\ConverterEnumDescription.cs" />
+    <Compile Include="Utils\WPFUtils\Converters\ConverterEnumVisibility.cs" />
+    <Compile Include="Utils\WPFUtils\Converters\ConverterMultiParameter.cs" />
+    <Compile Include="Utils\WPFUtils\Converters\ConverterOpenAndClose.cs" />
+    <Compile Include="Utils\WPFUtils\Converters\ConverterUnitMmFeet.cs" />
+    <Compile Include="Utils\WPFUtils\Converters\ConverterXmlToString.cs" />
+    <Compile Include="Utils\WPFUtils\Converters\EnumToBoolConverter.cs" />
+    <Compile Include="Utils\WPFUtils\Converters\FalseToVisibleConverter.cs" />
+    <Compile Include="Utils\WPFUtils\Converters\FeetToIntString.cs" />
+    <Compile Include="Utils\WPFUtils\Converters\IndexConverter.cs" />
+    <Compile Include="Utils\WPFUtils\Converters\IntToDiamterStringConverter.cs" />
+    <Compile Include="Utils\WPFUtils\Converters\IntToStringConverter.cs" />
+    <Compile Include="Utils\WPFUtils\Converters\IntToVisibilityConverter.cs" />
+    <Compile Include="Utils\WPFUtils\Converters\InvertBooleanConverter.cs" />
+    <Compile Include="Utils\WPFUtils\Converters\LayerToStringConverter.cs" />
+    <Compile Include="Utils\WPFUtils\Converters\NullableToBoolConverter.cs" />
+    <Compile Include="Utils\WPFUtils\Converters\NullToBoolConverter.cs" />
+    <Compile Include="Utils\WPFUtils\Converters\NullVisibilityConverter.cs" />
+    <Compile Include="Utils\WPFUtils\Converters\RadioBoolToIntConverter.cs" />
+    <Compile Include="Utils\WPFUtils\Converters\RadioButtonCheckedConverter.cs" />
+    <Compile Include="Utils\WPFUtils\Customs\BindableMultiSelectDataGrid.cs" />
+    <Compile Include="Utils\WPFUtils\Customs\MultiSelectorExtension.cs" />
+    <Compile Include="Utils\WPFUtils\Customs\MultiSelectTreeView.cs" />
+    <Compile Include="Utils\WPFUtils\DialogCloser.cs" />
+    <Compile Include="Utils\WPFUtils\FooterLeft.xaml.cs">
+      <DependentUpon>FooterLeft.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\WPFUtils\IconHelper.cs" />
+    <Compile Include="Utils\WPFUtils\RelayCommand.cs" />
+    <Compile Include="Utils\WPFUtils\ViewModelBase.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\RebarOpening.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>RebarOpening.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RevitAddin.addin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Utils\WPFUtils\controls.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Utils\WPFUtils\FooterLeft.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Utils\WPFUtils\ResourceDictionaries\BorderStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Utils\WPFUtils\ResourceDictionaries\ButtonStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Utils\WPFUtils\ResourceDictionaries\CheckBoxStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Utils\WPFUtils\ResourceDictionaries\ComboBoxStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Utils\WPFUtils\ResourceDictionaries\DataGridStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Utils\WPFUtils\ResourceDictionaries\GeneralStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Utils\WPFUtils\ResourceDictionaries\GridStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Utils\WPFUtils\ResourceDictionaries\GroupBoxStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Utils\WPFUtils\ResourceDictionaries\MenuItemStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Utils\WPFUtils\ResourceDictionaries\MenuStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Utils\WPFUtils\ResourceDictionaries\PasswordBoxStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Utils\WPFUtils\ResourceDictionaries\ProgressBarStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Utils\WPFUtils\ResourceDictionaries\RadioButtonStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Utils\WPFUtils\ResourceDictionaries\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Utils\WPFUtils\ResourceDictionaries\TabControlStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Utils\WPFUtils\ResourceDictionaries\TabItemStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Utils\WPFUtils\ResourceDictionaries\TextBoxStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Utils\WPFUtils\ResourceDictionaries\ToggleButtonStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Utils\WPFUtils\ResourceDictionaries\TreeViewStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rebaropening.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rebaropening16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Utils\WPFUtils\feedback.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Utils\WPFUtils\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PackageContents.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>del "$(TargetDir)*.pdb" / q
+del "$(TargetDir)*.xml" / q
+del "$(TargetDir)*.config" / q
+
+xcopy "$(ProjectDir)*PackageContents.xml" "$(ProgramData)\Autodesk\ApplicationPlugins\RevitAddin.bundle\" /Y
+xcopy "$(ProjectDir)*.ico" "$(ProgramData)\Autodesk\ApplicationPlugins\RevitAaddin.bundle\" /Y
+xcopy "$(ProjectDir)*PackageContents.xml" "$(ProjectDir)bin\RevitAddin.bundle\" /Y
+xcopy "$(ProjectDir)*.ico" "$(ProjectDir)bin\RevitAddin.bundle\" /Y
+xcopy "$(SolutionDir)Resources" "$(ProgramData)\Autodesk\ApplicationPlugins\RevitAddin.bundle\Contents\Resources\" /S /D /Y
+
+if "$(ConfigurationName)" == "Debug_$(RevitVersion)" xcopy "$(TargetDir)*" "$(ProgramData)\Autodesk\ApplicationPlugins\RevitAddin.bundle\Contents\$(RevitVersion)\" /Y/D/E
+if "$(ConfigurationName)" == "Release_$(RevitVersion)" xcopy "$(TargetDir)*" "$(ProgramData)\Autodesk\ApplicationPlugins\RevitAddin.bundle\Contents\$(RevitVersion)\" /Y/D/E
+if "$(ConfigurationName)" == "Release_$(RevitVersion)" xcopy "$(TargetDir)*" "$(ProjectDir)bin\RevitAddin.bundle\Contents\$(RevitVersion)\" /Y/D/E
+if "$(ConfigurationName)" == "Release_$(RevitVersion)" xcopy "$(SolutionDir)Resources" "$(ProjectDir)bin\RevitAddin.bundle\Contents\Resources\" /S /D
+
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

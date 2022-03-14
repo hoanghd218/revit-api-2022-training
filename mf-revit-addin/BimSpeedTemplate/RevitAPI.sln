@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RevitAddins", "RevitAddins\RevitAddins.csproj", "{C425FB30-E9D1-46B6-B87A-B9214AAD4714}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug_2020|Any CPU = Debug_2020|Any CPU
+		Debug_2021|Any CPU = Debug_2021|Any CPU
+		Debug_2022|Any CPU = Debug_2022|Any CPU
+		Release_2020|Any CPU = Release_2020|Any CPU
+		Release_2021|Any CPU = Release_2021|Any CPU
+		Release_2022|Any CPU = Release_2022|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C425FB30-E9D1-46B6-B87A-B9214AAD4714}.Debug_2020|Any CPU.ActiveCfg = Debug_2020|Any CPU
+		{C425FB30-E9D1-46B6-B87A-B9214AAD4714}.Debug_2020|Any CPU.Build.0 = Debug_2020|Any CPU
+		{C425FB30-E9D1-46B6-B87A-B9214AAD4714}.Debug_2021|Any CPU.ActiveCfg = Debug_2021|Any CPU
+		{C425FB30-E9D1-46B6-B87A-B9214AAD4714}.Debug_2021|Any CPU.Build.0 = Debug_2021|Any CPU
+		{C425FB30-E9D1-46B6-B87A-B9214AAD4714}.Debug_2022|Any CPU.ActiveCfg = Debug_2022|Any CPU
+		{C425FB30-E9D1-46B6-B87A-B9214AAD4714}.Debug_2022|Any CPU.Build.0 = Debug_2022|Any CPU
+		{C425FB30-E9D1-46B6-B87A-B9214AAD4714}.Release_2020|Any CPU.ActiveCfg = Release_2020|Any CPU
+		{C425FB30-E9D1-46B6-B87A-B9214AAD4714}.Release_2020|Any CPU.Build.0 = Release_2020|Any CPU
+		{C425FB30-E9D1-46B6-B87A-B9214AAD4714}.Release_2021|Any CPU.ActiveCfg = Release_2021|Any CPU
+		{C425FB30-E9D1-46B6-B87A-B9214AAD4714}.Release_2022|Any CPU.ActiveCfg = Release_2022|Any CPU
+		{C425FB30-E9D1-46B6-B87A-B9214AAD4714}.Release_2022|Any CPU.Build.0 = Release_2022|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {51076342-4B99-49B0-94F4-D372BE82AFAF}
+	EndGlobalSection
+EndGlobal

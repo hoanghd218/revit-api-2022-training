@@ -1,0 +1,23 @@
+/MFProjects/MFSetup/Debug
+bin
+obj
+en-US
+/MFProjects/Addin/MF_Tools/MFResourceManager.dll
+/MFProjects/Addin/MF_Tools/MFResourceManager.pdb
+/MFProjects/Addin/MF_Tools/MFRevitTools.dll
+/MFProjects/Addin/MF_Tools/MFRevitTools.pdb
+/MFProjects/Addin/MF_Tools/MFUtilities.dll
+/MFProjects/Addin/MF_Tools/MFUtilities.pdb
+/MFProjects/Addin/MF_Tools/RevitAPI.dll
+/MFProjects/Addin/MF_Tools/RevitAPIUI.dll
+/MFProjects/MFSetup2020/Release_2021
+/MFProjects/MFSetup2021/Release_2021
+/MFProjects/MFSetup2021/Debug
+/MFProjects/MFSetup2020/Debug
+Debug
+/MFProjects/.vs
+/MFProjects/MFSetup2021/Release_2020
+/.vs
+/MFProjects/Addin/M&F Installer/PROJECT_ASSISTANT
+MFProjects/Addin/Output/2021/MF_Tools/
+MFProjects/Addin/Output/2020/

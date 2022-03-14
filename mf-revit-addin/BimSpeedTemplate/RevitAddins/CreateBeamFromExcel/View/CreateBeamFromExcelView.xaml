@@ -1,0 +1,73 @@
+﻿<Window x:Class="RevitAddins.CreateBeamFromExcel.View.CreateBeamFromExcelView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:converters1="clr-namespace:RevitApiUtils.WPFUtils.Converters"
+        xmlns:wpfUtils="clr-namespace:RevitApiUtils.WPFUtils"
+        mc:Ignorable="d"
+        Title="Create Beam"
+        WindowStartupLocation="CenterScreen"
+        Name="MainWindow"
+        Height="280"
+        Width="400"
+        ResizeMode="NoResize"
+        Topmost="True"
+        >
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Utils/WPFUtils/ResourceDictionaries/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="Button"
+                   BasedOn="{StaticResource ResourceKey=ButtonStyle}" />
+            <Style TargetType="CheckBox"
+                   BasedOn="{StaticResource ResourceKey=CheckBoxStyle}" />
+            <Style TargetType="RadioButton"
+                   BasedOn="{StaticResource ResourceKey=RadioButtonStyle}" />
+            <Style TargetType="GroupBox"
+                   BasedOn="{StaticResource ResourceKey=GroupBoxStyle}" />
+            <Style TargetType="ComboBox"
+                   BasedOn="{StaticResource ResourceKey=ComboBoxStyle}" />
+            <Style TargetType="TextBox"
+                   BasedOn="{StaticResource ResourceKey=TextBoxStyle}" />
+            <Style TargetType="ProgressBar"
+                   BasedOn="{StaticResource ResourceKey=ProgressBarStyle}" />
+            <converters1:BoolRadioConverter x:Key="BoolRadioConverter" />
+            <converters1:FeetToIntString x:Key="FeetToIntString" />
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel>
+                <RadioButton IsChecked="{Binding SelectedActiveFile}">Active Excel File</RadioButton>
+                <RadioButton IsChecked="{Binding SelectedChooseFile}" x:Name="rdbChoose">Choose Excel File</RadioButton>
+                <DockPanel>
+                    <TextBox Background="#FFCEE6E6" Width="330" IsEnabled="{Binding ElementName=rdbChoose, Path=IsChecked}" Text="{Binding Path}"></TextBox>
+                    <Button HorizontalAlignment="Right" Width="30" IsEnabled="{Binding ElementName=rdbChoose, Path=IsChecked}" Command="{Binding BrowseCommand}">
+                        ...
+                    </Button>
+                </DockPanel>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1">
+                <DockPanel>
+                    <TextBlock>Level</TextBlock>
+                    <ComboBox HorizontalAlignment="Right" Width="300" ItemsSource="{Binding AllLevel}" DisplayMemberPath="Name" SelectedValue="{Binding SelectedLevel}"></ComboBox>
+                </DockPanel>
+                <DockPanel>
+                    <TextBlock>Family</TextBlock>
+                    <ComboBox HorizontalAlignment="Right" Width="300" ItemsSource="{Binding AllFramingFamily}" DisplayMemberPath="Name" SelectedValue="{Binding SelectedFamily}"></ComboBox>
+                </DockPanel>
+                <Button HorizontalAlignment="Right" Width="100" Height="30" Command="{Binding CreateCommand}" CommandParameter="{Binding ElementName=MainWindow}">
+                    Create
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
